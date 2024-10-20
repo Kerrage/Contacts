@@ -42,6 +42,9 @@ fun ContactScreen(
             }
         }
     ) { padding ->
+        if(state.isAddingContact) {
+            AddContactDialog(state = state, onEvent = onEvent)
+        }
         LazyColumn(
             contentPadding = padding,
             modifier = Modifier.fillMaxSize(),
