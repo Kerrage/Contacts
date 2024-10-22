@@ -7,6 +7,7 @@ sealed interface ContactEvent {
     data class SetLastName(val lastName: String) : ContactEvent
     data class SetPhoneNumber(val phoneNumber: String) : ContactEvent
     data class SetCompany(val company: String) : ContactEvent
+    data class ShowCompany(val checked: Boolean) : ContactEvent
     object SaveContact : ContactEvent
     data class SortContacts(val sortType: SortType) : ContactEvent
     data class DeleteContact(val contact: Contact) : ContactEvent

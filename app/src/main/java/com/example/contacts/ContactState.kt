@@ -7,5 +7,6 @@ data class ContactState(
     val phoneNumber: String = "",
     val company: String = "",
     val isAddingContact: Boolean = false,
+    var hasCompany: Boolean =  false,
     val sortType: SortType = SortType.FIRST_NAME
 )

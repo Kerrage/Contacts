@@ -19,7 +19,8 @@ class MainActivity : ComponentActivity() {
             applicationContext,
             ContactDatabase::class.java,
             "contacts.db"
-        ).build()
+        ).fallbackToDestructiveMigration()
+        .build()
     }
     private val viewModel by viewModels<ContactViewModel>(
         factoryProducer = {

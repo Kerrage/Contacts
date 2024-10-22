@@ -114,6 +114,14 @@ class ContactViewModel(
                 }
             }
 
+            is ContactEvent.ShowCompany -> {
+                _state.update {
+                    it.copy(
+                        hasCompany = true
+                    )
+                }
+            }
+
             ContactEvent.ShowDialog -> {
                 _state.update {
                     it.copy(

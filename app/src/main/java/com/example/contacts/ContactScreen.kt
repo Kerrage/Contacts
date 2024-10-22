@@ -47,6 +47,10 @@ fun ContactScreen(
         if(state.isAddingContact) {
             AddContactDialog(state = state, onEvent = onEvent)
         }
+
+        if(state.hasCompany) {
+
+        }
         LazyColumn(
             contentPadding = padding,
             modifier = Modifier.fillMaxSize(),
@@ -91,6 +95,10 @@ fun ContactScreen(
                         )
                         Text(
                             text = contact.phoneNumber,
+                            fontSize = 12.sp
+                        )
+                        Text(
+                            text = contact.company,
                             fontSize = 12.sp
                         )
                     }
