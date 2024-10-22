@@ -5,6 +5,7 @@ data class ContactState(
     val firstName: String = "",
     val lastName: String = "",
     val phoneNumber: String = "",
+    val company: String = "",
     val isAddingContact: Boolean = false,
     val sortType: SortType = SortType.FIRST_NAME
 )

@@ -55,6 +55,7 @@ class ContactViewModel(
                 val firstName = state.value.firstName
                 val lastName = state.value.lastName
                 val phoneNumber = state.value.phoneNumber
+                val company = state.value.company
 
                 if (firstName.isBlank() || lastName.isBlank() || phoneNumber.isBlank()) {
                     return
@@ -63,7 +64,8 @@ class ContactViewModel(
                 val contact = Contact(
                     firstName = firstName,
                     lastName = lastName,
-                    phoneNumber = phoneNumber
+                    phoneNumber = phoneNumber,
+                    company = company
                 )
 
                 viewModelScope.launch {
@@ -100,6 +102,14 @@ class ContactViewModel(
                 _state.update {
                     it.copy(
                         phoneNumber = event.phoneNumber
+                    )
+                }
+            }
+
+            is ContactEvent.SetCompany -> {
+                _state.update {
+                    it.copy(
+                        company = event.company
                     )
                 }
             }
